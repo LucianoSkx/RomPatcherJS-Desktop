@@ -1,0 +1,17 @@
+{
+    "name": "rom-patcher-desktop",
+    "version": "1.0.0",
+    "description": "Rom Patcher JS - Desktop GUI (Electron wrapper)",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder --linux --config builder-config.json",
+        "build:appimage": "electron-builder --linux --config builder-config.json"
+    },
+    "author": "Marc Robledo (original), Electron wrapper contributors",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^33.0.0",
+        "electron-builder": "^25.0.0"
+    }
+}
