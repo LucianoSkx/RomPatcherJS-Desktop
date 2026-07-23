@@ -1,0 +1,42 @@
+name: Build and Release AppImage
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Install electron dependencies
+        run: npm install
+        working-directory: electron
+
+      - name: Build AppImage
+        run: npm run build:appimage
+        working-directory: electron
+
+      - name: Rename AppImage
+        run: mv "dist/Rom Patcher JS-1.0.0.AppImage" "dist/RomPatcherJS-1.0.0.AppImage"
+        working-directory: electron
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Rom Patcher JS ${{ github.ref_name }}
+          body: |
+            AppImage Linux do Rom Patcher JS Desktop Edition.
+
+            Baseado no [RomPatcher.js](https://github.com/marcrobledo/RomPatcher.js) por Marc Robledo.
+          files: electron/dist/RomPatcherJS-1.0.0.AppImage
+          generate_release_notes: true

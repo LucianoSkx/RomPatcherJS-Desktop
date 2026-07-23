@@ -8,10 +8,14 @@
         "build": "electron-builder --linux --config builder-config.json",
         "build:appimage": "electron-builder --linux --config builder-config.json"
     },
+    "repository": "github:LucianoSkx/RomPatcherJS-Desktop",
     "author": "Marc Robledo (original), Electron wrapper contributors",
     "license": "MIT",
     "devDependencies": {
         "electron": "^33.0.0",
         "electron-builder": "^25.0.0"
+    },
+    "allowScripts": {
+        "electron@33.4.11": true
     }
 }
