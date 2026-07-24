@@ -40,3 +40,4 @@ jobs:
             Baseado no [RomPatcher.js](https://github.com/marcrobledo/RomPatcher.js) por Marc Robledo.
           files: electron/dist/RomPatcherJS-1.0.0.AppImage
           generate_release_notes: true
+          draft: false
