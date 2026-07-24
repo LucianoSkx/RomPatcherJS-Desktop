@@ -23,7 +23,7 @@ jobs:
         working-directory: electron
 
       - name: Build AppImage
-        run: npm run build:appimage
+        run: npx electron-builder --linux --config builder-config.json --publish never
         working-directory: electron
 
       - name: Rename AppImage
