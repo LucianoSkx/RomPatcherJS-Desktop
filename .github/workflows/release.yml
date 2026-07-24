@@ -29,7 +29,7 @@ jobs:
         working-directory: electron
 
       - name: Rename AppImage
-        run: mv "dist/Rom Patcher JS-1.0.0.AppImage" "dist/RomPatcherJS-1.0.0.AppImage"
+        run: mv "dist/Rom Patcher JS-1.0.1.AppImage" "dist/RomPatcherJS-1.0.1.AppImage"
         working-directory: electron
 
       - name: Create Release
@@ -40,6 +40,6 @@ jobs:
             AppImage Linux do Rom Patcher JS Desktop Edition.
 
             Baseado no [RomPatcher.js](https://github.com/marcrobledo/RomPatcher.js) por Marc Robledo.
-          files: electron/dist/RomPatcherJS-1.0.0.AppImage
+          files: electron/dist/RomPatcherJS-1.0.1.AppImage
           generate_release_notes: true
           draft: false
